@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
+            <artifactId>jaxb-core    </artifactId>
             <version>2.2.11</version>
         </dependency>
         <dependency>
@@ -26,11 +26,11 @@
             <artifactId>jaxb-impl</artifactId>
             <version>2.2.11</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>javax.activation</groupId>-->
-<!--            <artifactId>activation</artifactId>-->
-<!--            <version>1.1.1</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

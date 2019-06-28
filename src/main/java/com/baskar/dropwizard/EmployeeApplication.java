@@ -1,10 +1,9 @@
 package com.baskar.dropwizard;
 
-import api.resource.EmployeeResources;
-import api.resource.Service.EmployeeService;
-import com.baskar.dropwizard.db.EmployeeDAO;
+import com.baskar.dropwizard.resource.EmployeeResources;
+import com.baskar.dropwizard.Service.EmployeeService;
+import com.baskar.dropwizard.db.dao.EmployeeDAO;
 import io.dropwizard.Application;
-import io.dropwizard.Configuration;
 import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Environment;
 import org.skife.jdbi.v2.DBI;

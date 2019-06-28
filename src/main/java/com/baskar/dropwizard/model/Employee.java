@@ -1,4 +1,4 @@
-package model;
+package com.baskar.dropwizard.model;
 
 public class Employee {
 
@@ -9,6 +9,10 @@ public class Employee {
     private String dob;
     private String phone;
     private int deptid;
+    public Employee()
+    {
+
+    }
 
     @Override
     public String toString() {
