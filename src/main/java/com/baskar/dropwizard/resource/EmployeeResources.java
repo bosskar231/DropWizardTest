@@ -3,6 +3,7 @@ package com.baskar.dropwizard.resource;
 
 import com.baskar.dropwizard.Service.EmployeeService;
 import com.baskar.dropwizard.model.Employee;
+import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
@@ -37,17 +38,25 @@ public class EmployeeResources {
         return Response.ok().build();
     }
 
-//    @PUT
-//    @Path("{id}")
-//    public Response editEmploye(final @NotNull Employee employee,@PathParam("id")final int id)
-//    {
-//        return Response.ok().entity(this.employeeService.editEmploye(employee)).build();
-//    }
+    @PUT
+    @Path("{id}")
+    public Response editEmploye(final @NotNull Employee employee,@PathParam("id")final int id)
+    {
+        return Response.ok().entity(this.employeeService.editEmploye(employee)).build();
+    }
 
     @DELETE
     @Path("{id}")
     public Response deleteEmployee(@PathParam("id")final int id)
     {
+
         return Response.ok().entity(this.employeeService.deleteEmployee(id)).build();
     }
+
+//    @POST
+//    @Path("/create")
+//    public Response create()
+//    {
+//            return Response.ok().build();
+//    }
 }

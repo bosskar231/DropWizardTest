@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-public class EmployeeConfiguration extends Configuration {
+public class     EmployeeConfiguration extends Configuration {
     @Valid
     @NotNull
     private DataSourceFactory dataSourceFactory=new DataSourceFactory();

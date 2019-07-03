@@ -24,9 +24,12 @@ public interface EmployeeDAO {
     @SqlUpdate("INSERT INTO `employee` (`empid`,`name`,`age`,`place`,`dob`,`phone`,`deptid`) VALUES (:eid , :name, :age, :place, :dob, :phone, :deptid );")
     public void insert(@BindBean  Employee employee);
 
-    //@SqlUpdate("update employee set ")
+    @SqlUpdate("update employee set name = coalesce(:name ,name) where empid= :eid")
+    void editEmploye(@BindBean Employee employee);
 
     @SqlUpdate("delete from employee where empid= :id")
     int deleteEmployee(@Bind("id")final int id);
+//    @SqlUpdate("create table baskarTest(id int);")
+//    public void create();
 }
 

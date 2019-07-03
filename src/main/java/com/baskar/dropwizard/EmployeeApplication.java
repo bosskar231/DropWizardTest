@@ -1,5 +1,8 @@
 package com.baskar.dropwizard;
 
+import com.baskar.dropwizard.Service.DepartmentService;
+import com.baskar.dropwizard.db.dao.DepartmentDAO;
+import com.baskar.dropwizard.resource.DepartmentResources;
 import com.baskar.dropwizard.resource.EmployeeResources;
 import com.baskar.dropwizard.Service.EmployeeService;
 import com.baskar.dropwizard.db.dao.EmployeeDAO;
@@ -9,6 +12,8 @@ import io.dropwizard.setup.Environment;
 import org.skife.jdbi.v2.DBI;
 
 public class EmployeeApplication extends Application<EmployeeConfiguration> {
+
+
     public static void main(String[] args) throws Exception {
         new EmployeeApplication().run(args);
     }
@@ -25,5 +30,12 @@ public class EmployeeApplication extends Application<EmployeeConfiguration> {
 
          final EmployeeResources employeeResources=new EmployeeResources(employeeService);
             environment.jersey().register(employeeResources);
+
+
+            final DepartmentDAO departmentDAO=dbi.onDemand(DepartmentDAO.class);
+            final DepartmentService departmentService=new DepartmentService(departmentDAO);
+
+            final DepartmentResources departmentResources=new DepartmentResources(departmentService);
+            environment.jersey().register(departmentResources);
     }
 }

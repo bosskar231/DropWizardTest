@@ -22,15 +22,27 @@ public class EmployeeService {
     }
     public void insert(Employee employee)
     {
-         this.employeeDAO.insert(employee);
+//        try
+//        {
+            this.employeeDAO.insert(employee);
+//        }
+//        catch (Exception e)
+//        {
+//            System.out.println("duplicate erroe");
+//        }
+
     }
-//    public Employee editEmploye(Employee employee)
-//    {
-//        this.employeeDAO.editEmploye(employee);
-//        return this.employeeDAO.getEmploye(Integer.parseInt(String.valueOf(employee.getEid())));
-//    }
+    public Employee editEmploye(Employee employee)
+    {
+        this.employeeDAO.editEmploye(employee);
+        return this.employeeDAO.getEmploye(Integer.parseInt(String.valueOf(employee.getEid())));
+    }
         public int deleteEmployee(int id)
         {
             return this.employeeDAO.deleteEmployee(id);
         }
+//        public void create()
+//        {
+//            this.employeeDAO.create();
+//        }
 }
